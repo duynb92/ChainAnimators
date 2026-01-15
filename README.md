@@ -20,7 +20,7 @@ Add `ChainAnimators` as a dependency in your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/your-repo/ChainAnimators.git", from: "1.0.0")
+    .package(url: "https://github.com/duynb92/ChainAnimators.git", from: "1.0.0")
 ]
 ```
 
