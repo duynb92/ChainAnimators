@@ -1,0 +1,112 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "ChainAnimators-arm64-apple-macosx15.0-debug.module": ["<ChainAnimators-arm64-apple-macosx15.0-debug.module>"]
+  "ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.module": ["<ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.module>"]
+  "ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.test": ["<ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.test>"]
+  "ChainAnimatorsTests-arm64-apple-macosx15.0-debug.module": ["<ChainAnimatorsTests-arm64-apple-macosx15.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<ChainAnimators-arm64-apple-macosx15.0-debug.module>"]
+  "test": ["<ChainAnimators-arm64-apple-macosx15.0-debug.module>","<ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.test>","<ChainAnimatorsTests-arm64-apple-macosx15.0-debug.module>"]
+default: "main"
+nodes:
+  "/Volumes/Data/2-Study/ChainAnimators/Sources/ChainAnimators/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Volumes/Data/2-Study/ChainAnimators/Tests/ChainAnimatorsTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Volumes/Data/2-Study/ChainAnimators/Sources/ChainAnimators/ChainAnimators.swift","/Volumes/Data/2-Study/ChainAnimators/Sources/ChainAnimators/UIViewPropertyAnimator+Async.swift"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/sources"]
+    description: "Write auxiliary file /Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/sources"
+
+  "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.derived/runner.swift"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/sources"]
+    description: "Write auxiliary file /Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/sources"
+
+  "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.derived/runner.swift"]
+
+  "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/ChainAnimators.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/UIViewPropertyAnimator+Async.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/ChainAnimatorsTests.swift.o"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.product/Objects.LinkFileList"
+
+  "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Volumes/Data/2-Study/ChainAnimators/Tests/ChainAnimatorsTests/ChainAnimatorsTests.swift"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/sources"]
+    description: "Write auxiliary file /Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/sources"
+
+  "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<ChainAnimators-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/ChainAnimators.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/UIViewPropertyAnimator+Async.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimators.swiftmodule"]
+    outputs: ["<ChainAnimators-arm64-apple-macosx15.0-debug.module>"]
+
+  "<ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsPackageTests.swiftmodule"]
+    outputs: ["<ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.module>"]
+
+  "<ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.test>":
+    tool: phony
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.xctest/Contents/MacOS/ChainAnimatorsPackageTests"]
+    outputs: ["<ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.test>"]
+
+  "<ChainAnimatorsTests-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/ChainAnimatorsTests.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsTests.swiftmodule"]
+    outputs: ["<ChainAnimatorsTests-arm64-apple-macosx15.0-debug.module>"]
+
+  "C.ChainAnimators-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/Sources/ChainAnimators/ChainAnimators.swift","/Volumes/Data/2-Study/ChainAnimators/Sources/ChainAnimators/UIViewPropertyAnimator+Async.swift","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/sources"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/ChainAnimators.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/UIViewPropertyAnimator+Async.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimators.swiftmodule"]
+    description: "Compiling Swift Module 'ChainAnimators' (2 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ChainAnimators","-emit-dependencies","-emit-module","-emit-module-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimators.swiftmodule","-output-file-map","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/sources","-I","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-v","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/include/ChainAnimators-Swift.h","-color-diagnostics","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","chainanimators"]
+
+  "C.ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.derived/runner.swift","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsTests.swiftmodule","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/sources"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'ChainAnimatorsPackageTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ChainAnimatorsPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsPackageTests.swiftmodule","-output-file-map","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/sources","-I","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-v","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/include/ChainAnimatorsPackageTests-Swift.h","-color-diagnostics","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","chainanimators"]
+
+  "C.ChainAnimatorsPackageTests-arm64-apple-macosx15.0-debug.test":
+    tool: shell
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/ChainAnimators.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimators.build/UIViewPropertyAnimator+Async.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/ChainAnimatorsTests.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.xctest/Contents/MacOS/ChainAnimatorsPackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.xctest/Contents/MacOS/ChainAnimatorsPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-v","-L","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug","-o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.xctest/Contents/MacOS/ChainAnimatorsPackageTests","-module-name","ChainAnimatorsPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimators.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsPackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsTests.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.ChainAnimatorsTests-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/Tests/ChainAnimatorsTests/ChainAnimatorsTests.swift","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimators.swiftmodule","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/sources"]
+    outputs: ["/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/ChainAnimatorsTests.swift.o","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsTests.swiftmodule"]
+    description: "Compiling Swift Module 'ChainAnimatorsTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ChainAnimatorsTests","-emit-dependencies","-emit-module","-emit-module-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules/ChainAnimatorsTests.swiftmodule","-output-file-map","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsTests.build/sources","-I","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-v","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","chainanimators"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Volumes/Data/2-Study/ChainAnimators/Sources/ChainAnimators/","/Volumes/Data/2-Study/ChainAnimators/Tests/ChainAnimatorsTests/","/Volumes/Data/2-Study/ChainAnimators/Package.swift","/Volumes/Data/2-Study/ChainAnimators/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
