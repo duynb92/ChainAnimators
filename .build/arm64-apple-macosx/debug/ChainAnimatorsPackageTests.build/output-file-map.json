@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/master.swiftdeps"
+  },
+  "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.derived/runner.swift": {
+    "dependencies": "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner.d",
+    "object": "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Volumes/Data/2-Study/ChainAnimators/.build/arm64-apple-macosx/debug/ChainAnimatorsPackageTests.build/runner.dia"
+  }
+}
